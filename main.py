@@ -1,7 +1,11 @@
 import uvicorn
 from fastapi import FastAPI
 
-app = FastAPI()
+from app.routers import auth, protected
+
+app = FastAPI(title="auth-session-service")
+app.include_router(auth.router)
+app.include_router(protected.router)
 
 
 @app.get("/")
