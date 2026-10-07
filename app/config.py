@@ -8,7 +8,7 @@ from dataclasses import dataclass, field
 @dataclass(frozen=True)
 class Settings:
     secret_key: str = field(
-        default_factory=lambda: os.environ.get("AUTH_SECRET_KEY", "dev-only-secret-change-me")
+        default_factory=lambda: os.environ.get("AUTH_SECRET_KEY", "dev-only-secret-change-me-0123456789abcdef")
     )
     algorithm: str = "HS256"
     access_token_ttl_seconds: int = 15 * 60
